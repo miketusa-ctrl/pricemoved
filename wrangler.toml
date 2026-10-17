@@ -1,0 +1,51 @@
+# Public template. Replace every <PLACEHOLDER> with your own Cloudflare resource IDs
+# (wrangler kv namespace create / wrangler d1 create). Rate-limit namespace IDs must be
+# unique integers within your account. Secrets go in `wrangler secret put`, never here.
+
+name = "pagewatch-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[[routes]]
+pattern = "pricemoved.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.pricemoved.com"
+custom_domain = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pagewatch-db"
+database_id = "<D1_DATABASE_ID>"
+preview_database_id = "<D1_PREVIEW_DATABASE_ID>"
+
+[version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[limits]
+cpu_ms = 100
+
+[vars]
+VERSION = "0.2.0"
+APP_NAME = "pagewatch"
+ENVIRONMENT = "development"
+LAUNCH_MODE = "waitlist"
+AUTH_MODE = "magic_link"
+EMAIL_MODE = "dry_run"
+SLACK_MODE = "dry_run"
+POLAR_MODE = "mock"
+DRY_RUN_DIR = "./dry-run"
+BASE_URL = "http://127.0.0.1:8787"
+OPERATOR_NAME = "PriceMoved, operated by Michael Rice"
+CONTACT_EMAIL = "digitalpromohub.support+pagewatch@gmail.com"
+WEB_ANALYTICS_TOKEN = ""
+MAILING_ADDRESS = ""
+POLAR_STARTER_PRODUCT_ID = "prod_starter_mock"
+POLAR_PRO_PRODUCT_ID = "prod_pro_mock"
+MCP_REGISTRY_AUTH = ""

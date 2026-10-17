@@ -1,0 +1,9 @@
+SESSION_SECRET=<set-locally>
+POLAR_WEBHOOK_SECRET=<set-locally>
+POLAR_ACCESS_TOKEN=<set-locally>
+# Local default for full product e2e. Production wrangler.toml uses waitlist.
+LAUNCH_MODE=full
+# Optional overrides (also settable in [vars]):
+# OPERATOR_NAME=Acme LLC
+# CONTACT_EMAIL=hello@example.com
+# MAILING_ADDRESS=123 Main St, City, ST 00000

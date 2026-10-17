@@ -1,0 +1,18 @@
+{
+  "name": "pagewatch-api",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --persist-to .wrangler/state --port 8787 --ip 127.0.0.1 --test-scheduled",
+    "db:migrate": "wrangler d1 migrations apply pagewatch-db --local --persist-to .wrangler/state",
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260702.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^3.114.17"
+  },
+  "license": "MIT"
+}

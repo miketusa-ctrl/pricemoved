@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.pricemoved/pricemoved",
+  "title": "PriceMoved",
+  "description": "Waitlist-stage pricing-page monitor: plans and early pricing, plus a PriceMovedBot robots.txt check.",
+  "version": "0.2.0",
+  "websiteUrl": "https://pricemoved.com/",
+  "icons": [{ "src": "https://pricemoved.com/favicon.svg", "mimeType": "image/svg+xml", "sizes": ["any"] }],
+  "remotes": [{ "type": "streamable-http", "url": "https://pricemoved.com/mcp" }]
+}

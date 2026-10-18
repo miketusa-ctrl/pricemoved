@@ -12,13 +12,26 @@ Waitlist-stage pricing-page monitor: plans and early pricing, plus a PriceMovedB
 
 PriceMoved is a remote MCP server (Streamable HTTP) at `https://pricemoved.com/mcp`. Tools: `product_info`, `robots_check`.
 
-Cursor, Cline and Windsurf accept this config:
+Cursor and Windsurf accept this config:
 
 ```json
 {
   "mcpServers": {
     "pricemoved": {
       "type": "http",
+      "url": "https://pricemoved.com/mcp"
+    }
+  }
+}
+```
+
+Cline (MCP Servers > Remote Servers, or `cline_mcp_settings.json`) needs `"type": "streamableHttp"`:
+
+```json
+{
+  "mcpServers": {
+    "pricemoved": {
+      "type": "streamableHttp",
       "url": "https://pricemoved.com/mcp"
     }
   }
